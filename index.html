@@ -233,11 +233,11 @@ section.bgs{position:relative;overflow:hidden;background:#000;color:#fff;padding
 <script>
 var K=["Cut","Color","Perm","Treatment"],W="日月火水木金土";
 var staff=[
- {n:"Hoshi",r:"Director / 21 years",b:"創業メンバー。骨格を読むカットで、20年以上通う顧客が多数。",p:[11000,13200,16500,8800]},
- {n:"Mitiyo",r:"Top Stylist / 14 years",b:"ブリーチ・ダブルカラーが得意。モノトーンのスタイル提案。",p:[8800,11000,14300,7700]},
- {n:"Numanou",r:"Stylist / 9 years",b:"ショート、ボブなど短めのカットを専門に担当。",p:[7700,9900,13200,6600]},
- {n:"Kenichi",r:"Colorist / 6 years",b:"透明感のあるアッシュ系カラーと髪質改善が得意。",p:[7700,11000,13200,7700]},
- {n:"Shota",r:"Assistant Stylist / 2 years",b:"デビュー前のアシスタント。モデル価格で承ります。",p:[5500,7700,11000,5500]}
+ {n:"Hoshi",p:[11000,13200,16500,8800]},
+ {n:"Mitiyo",p:[8800,11000,14300,7700]},
+ {n:"Numanou",p:[7700,9900,13200,6600]},
+ {n:"Kenichi",p:[7700,11000,13200,7700]},
+ {n:"Shota",p:[5500,7700,11000,5500]}
 ];
 function yen(n){return "¥"+n.toLocaleString("en-US")}
 function iso(x){return x.getFullYear()+"-"+String(x.getMonth()+1).padStart(2,"0")+"-"+String(x.getDate()).padStart(2,"0")}
@@ -256,7 +256,7 @@ function draw(){
 staff.forEach(function(p){
   var c=document.createElement("div");c.className="card";
   var rows=K.map(function(k,i){return "<tr><td>"+k+"</td><td>"+yen(p.p[i])+"〜</td></tr>"}).join("");
-  c.innerHTML='<button class="top" aria-expanded="false"><div class="ph"></div><h3>'+p.n+'</h3><small>'+p.r+'</small></button><div class="more"><p>'+p.b+'</p><table class="pl">'+rows+'</table><span class="lab2">空き状況（タップで予約へ）</span><div class="days"></div></div>';
+  c.innerHTML='<button class="top" aria-expanded="false"><div class="ph"></div><h3>'+p.n+'</h3></button><div class="more"><table class="pl">'+rows+'</table><span class="lab2">空き状況（タップで予約へ）</span><div class="days"></div></div>';
   var days=c.querySelector(".days");
   for(var k=1;k<=6;k++){(function(k){var dt=new Date();dt.setDate(dt.getDate()+k);
     var n=times().filter(function(x){return isOpen(dt,p.n,x[1],x[2])}).length;
