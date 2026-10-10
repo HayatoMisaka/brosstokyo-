@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Archivo:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 <style>
-:root{--k:#000;--w:#fff;--g:#8a8a8a;--l:#d9d9d9;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--k:#fff;--w:#000;--g:#8a8a8a;--l:#d9d9d9;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html{scroll-behavior:smooth;scroll-padding-top:64px}
 *,*::before,*::after{box-sizing:inherit;margin:0}
 body{background:var(--w);color:var(--k);font:300 15px/1.9 "Archivo","Noto Sans JP",Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
@@ -52,7 +52,7 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:34px 4vw;max-width:980px}
 .f.full{grid-column:1/-1}
 label,.lab{font-size:11px;letter-spacing:.25em}
 select,input{font:inherit;color:var(--k);background:none;border:0;border-bottom:1px solid var(--k);border-radius:0;padding:10px 0;font-size:16px;min-height:44px}
-select,input[type=date]{-webkit-appearance:none;appearance:none;border-radius:0;box-shadow:none;background-color:transparent}select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23000'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;padding-right:28px;cursor:pointer}option{background:#fff;color:#000}input[type=date]{min-width:0;width:100%}
+select,input[type=date]{-webkit-appearance:none;appearance:none;border-radius:0;box-shadow:none;background-color:transparent}select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23fff'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;padding-right:28px;cursor:pointer}option{background:#fff;color:#000}input[type=date]{min-width:0;width:100%}
 .slots{display:flex;flex-wrap:wrap;gap:8px}
 .slots button{font:inherit;font-size:13px;padding:10px 16px;min-height:44px;border:1px solid var(--k);background:var(--w);color:var(--k);cursor:pointer}
 .slots button[aria-pressed=true]{background:var(--k);color:var(--w)}
@@ -115,6 +115,11 @@ section.bgs{position:relative;overflow:hidden;background:#000;color:#fff;padding
 .ts-in{background:#fff;color:#000;width:100%;max-width:520px;padding:28px 5vw calc(28px + env(safe-area-inset-bottom,0px))}.ts-in p{font-size:13px;margin-bottom:12px}.ts-in b{display:block;font:400 34px/1.2 "Bodoni Moda",serif;margin-bottom:20px}
 .ts-call{display:flex;align-items:center;justify-content:center;min-height:52px;border:1px solid #000;margin-bottom:10px;font-size:12px;letter-spacing:.25em}
 .ts-btn{display:grid;grid-template-columns:1fr 1fr;gap:10px}.ts-btn button{font:inherit;font-size:12px;letter-spacing:.25em;min-height:52px;border:1px solid #000;background:#000;color:#fff;cursor:pointer}.ts-btn button+button{background:#fff;color:#000}
+.hero,footer{background:#000;color:#fff}
+.cpt p,.guide p{color:#bdbdbd}
+.slots button:disabled{color:#555;border-color:#333}
+.book{border-top-color:#333}
+@media(max-width:640px){.hero{grid-template-rows:auto 1fr auto}.hero>.hero-img{position:relative;inset:auto;z-index:0;width:calc(100% + 10vw);height:54svh;margin:0 -5vw;opacity:1;object-position:50% 20%;-webkit-mask-image:linear-gradient(#000 78%,transparent);mask-image:linear-gradient(#000 78%,transparent)}.hero .n{align-self:center;margin:20px 0 24px}}
 </style>
 </head>
 <body>
